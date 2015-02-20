@@ -140,8 +140,8 @@ TEST <- cbind(TEST, body_acc_x_test, body_acc_y_test, body_acc_z_test,
 ALLDATA <- rbind(TRAIN, TEST)
 
 #Find mean and std columns
-mean <- grep("mean", names(ALLDATA))
-std <- grep("std", names(ALLDATA))
+mean <- grep("mean()", names(ALLDATA), fixed = TRUE)
+std <- grep("std()", names(ALLDATA), fixed = TRUE)
 
 index <- c(1, 2, mean, std)
 index <- sort(index)
